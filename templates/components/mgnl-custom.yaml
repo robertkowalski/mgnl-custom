@@ -1,0 +1,4 @@
+title: mgnl-custom
+renderType: freemarker
+templateScript: /mgnl-custom/templates/components/mgnl-custom.ftl
+dialog: mgnl-custom:components/mgnl-custom
