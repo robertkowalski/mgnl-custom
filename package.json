@@ -4,7 +4,7 @@
   "description": "no dependencies, no cry",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"test\"",
+    "test": "jest",
     "build": "webpack webpack.config.js",
     "watch": "npm run build -- --watch",
     "prepublish": "npm run test && echo \"Building...\" && npm run build"
@@ -31,6 +31,7 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "css-loader": "^0.26.1",
+    "jest": "^18.1.0",
     "mocha": "^3.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
