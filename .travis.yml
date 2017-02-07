@@ -26,6 +26,11 @@ before_script:
   - mgnl start &
   - until fgrep -q "Server startup" apache-tomcat/logs/catalina.out; do sleep 1; done
   - echo "server started"
+
+  - curl http://localhost:8080/magnoliaAuthor/.rest/commands/v2/website/activate -H "Content-Type: application/json" -X POST --user superuser:superuser   --data '{"repository": "website","path": "/ci-testpage","recursive": "false"}'
+  - curl http://localhost:8080/magnoliaPublic/.rest/commands/v2/website/activate   -H "Content-Type: application/json" -X POST --user superuser:superuser   --data '{"repository": "website","path": "/ci-testpage","recursive": "false"}'
+
+
   - cd ..
   - cd mgnl-custom
   - curl http://localhost:8080/magnoliaPublic/ci-testpage.html
