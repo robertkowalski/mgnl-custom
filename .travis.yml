@@ -12,3 +12,16 @@ before_script:
   - cd ..
   - ls
   - cp -R mgnl-custom magnolia/light-modules/
+  - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
+  - ls magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
+
+  - mgnl start &
+  - until fgrep -q "Server startup" magnolia/apache-tomcat/logs/catalina.out; do sleep 1; done
+  - echo "server started"
+
+  - cd mgnl-custom
+
+script:
+  - curl -u superuser:superuser http://localhost:8080/magnoliaPublic/.rest/nodes/v1/website/ci-testpage
+
+  - curl -u superuser:superuser http://localhost:8080/magnoliaPublic/.rest/nodes/v1/website/ci-testpage | grep "furbie"
