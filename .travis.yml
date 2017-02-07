@@ -11,6 +11,9 @@ before_script:
   - cd .. && mkdir -p magnolia && cd magnolia && mgnl jumpstart
   - cd ..
   - ls
+
+  - cd mgnl-custom && npm i && npm run build && cd ..
+
   - cp -R mgnl-custom magnolia/light-modules/
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
   - ls magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
@@ -27,5 +30,5 @@ before_script:
   - cd mgnl-custom
 
 script:
-  - curl -u superuser:superuser http://localhost:8080/magnoliaPublic/.rest/nodes/v1/website/ci-testpage
-  - curl -u superuser:superuser http://localhost:8080/magnoliaPublic/.rest/nodes/v1/website/ci-testpage | grep "furbie"
+  - curl http://localhost:8080/magnoliaPublic/ci-testpage.html
+  - curl http://localhost:8080/magnoliaPublic/ci-testpage.html | grep "furbie"
