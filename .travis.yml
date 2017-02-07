@@ -15,6 +15,7 @@ before_script:
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
   - ls magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
 
+  - cat magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/config/default/magnolia.properties | grep magnolia.resources.dir
   - mkdir -p magnolia/apache-tomcat/logs/
   - touch magnolia/apache-tomcat/logs/catalina.out
   - pwd && ls
@@ -27,5 +28,4 @@ before_script:
 
 script:
   - curl -u superuser:superuser http://localhost:8080/magnoliaPublic/.rest/nodes/v1/website/ci-testpage
-
   - curl -u superuser:superuser http://localhost:8080/magnoliaPublic/.rest/nodes/v1/website/ci-testpage | grep "furbie"
