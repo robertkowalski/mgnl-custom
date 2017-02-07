@@ -14,6 +14,7 @@ before_script:
   - cp -R mgnl-custom magnolia/light-modules/
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
   - ls magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
+
   - mkdir -p magnolia/apache-tomcat/logs/
   - touch magnolia/apache-tomcat/logs/catalina.out
   - pwd && ls
@@ -21,7 +22,7 @@ before_script:
   - mgnl start &
   - until fgrep -q "Server startup" apache-tomcat/logs/catalina.out; do sleep 1; done
   - echo "server started"
-
+  - cd ..
   - cd mgnl-custom
 
 script:
