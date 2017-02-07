@@ -1,3 +1,11 @@
 language: node_js
 node_js:
   - "6"
+
+sudo: required
+
+before_script:
+  - git clone -b proto https://github.com/robertkowalski/magnolia-cli
+  - cd magnolia-cli && npm i -g .
+  - mgnl -h
+  - mgnl jumpstart
