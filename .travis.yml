@@ -4,7 +4,14 @@ node_js:
 
 sudo: required
 
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+
+
 before_script:
+  - java -version
   - cd .. && git clone -b proto https://github.com/robertkowalski/magnolia-cli
   - cd magnolia-cli && npm i -g .
   - mgnl -h
