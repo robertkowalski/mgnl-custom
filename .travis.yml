@@ -7,8 +7,14 @@ addons:
   apt:
     packages:
       - oracle-java8-installer
+      - oracle-java8-set-default
+
+dist: trusty
 
 before_script:
+  - java -version
+  - echo $JAVA_HOME
+
   - cd .. && git clone -b proto https://github.com/robertkowalski/magnolia-cli
   - cd magnolia-cli && npm i -g .
   - mgnl -h
