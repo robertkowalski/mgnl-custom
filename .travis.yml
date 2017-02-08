@@ -1,11 +1,14 @@
-sudo: required
+language: node_js
+node_js:
+  - "6"
 
-language: java
-jdk:
-  - oraclejdk8
+sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
 
 before_script:
-  - nvm install 6 && nvm use 6
   - cd .. && git clone -b proto https://github.com/robertkowalski/magnolia-cli
   - cd magnolia-cli && npm i -g .
   - mgnl -h
