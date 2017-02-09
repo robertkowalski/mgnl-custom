@@ -28,9 +28,8 @@ before_script:
   - cd mgnl-custom && npm run build && cd ..
 
   - cp -R mgnl-custom magnolia/light-modules/
-  - ls magnolia
-  - ls magnolia/$TOMCAT_FOLDER
-  - ls magnolia/light-modules/mgnl-custom
+  - ls magnolia/light-modules/
+
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/$TOMCAT_FOLDER/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
 
   - mkdir -p magnolia/$TOMCAT_FOLDER/logs/
