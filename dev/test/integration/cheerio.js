@@ -10,6 +10,8 @@ describe('integration test', () => {
 
   it('renders the template with the css class furbie', (done) => {
     request(URL, (err, res, body) => {
+      console.log(err)
+      console.log(body)
       const $ = cheerio.load(body)
       assert.equal($('.furbie').length, 1)
       done()
