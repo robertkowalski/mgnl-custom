@@ -9,6 +9,8 @@ const URL = 'http://localhost:8080/magnoliaPublic/ci-testpage.html'
 describe('integration test', () => {
 
   it('renders the template with the css class furbie', (done) => {
+    this.timeout(5000)
+
     request({
       headers: {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:51.0) Gecko/20100101 Firefox/51.0'
