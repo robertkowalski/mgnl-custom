@@ -13,7 +13,6 @@ describe('integration test', () => {
       const $ = cheerio.load(body)
       assert.equal($('.furbie').length, 1)
       done()
-
     })
   })
 
