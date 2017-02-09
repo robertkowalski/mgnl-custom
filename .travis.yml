@@ -30,6 +30,10 @@ before_script:
   - mkdir -p magnolia/light-modules/mgnl-custom
   - cp -R mgnl-custom magnolia/light-modules/mgnl-custom
   - ls magnolia/light-modules/
+  - ls magnolia/light-modules/mgnl-custom
+  - ls magnolia/light-modules/mgnl-custom/dev
+  - ls magnolia/light-modules/mgnl-custom/dev/test
+  - ls magnolia/light-modules/mgnl-custom/dev/test/fixtures
 
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/$TOMCAT_FOLDER/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
 
