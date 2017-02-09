@@ -4,7 +4,7 @@ node_js:
 
 env:
   - MAGNOLIA_CE_VERSION=5.5.1
-  - MAGNOLIA_CE_VERSION=5.4.10
+  # - MAGNOLIA_CE_VERSION=5.4.10
 
 sudo: false
 addons:
@@ -22,18 +22,20 @@ before_script:
   # - mkdir -p magnolia && cd magnolia && mgnl jumpstart && cd ..
   - cd .. && curl -fSL "https://nexus.magnolia-cms.com/content/repositories/magnolia.public.releases/info/magnolia/bundle/magnolia-community-demo-bundle/$MAGNOLIA_CE_VERSION/magnolia-community-demo-bundle-$MAGNOLIA_CE_VERSION-tomcat-bundle.tar.gz -o magnolia.tar.gz"
   - mkdir magnolia && tar -xzf magnolia.tar.gz -C magnolia --strip-components=1
+  - TOMCAT_FOLDER=$(ls magnolia | grep apache)
 
   - cd mgnl-custom && npm run build && cd ..
 
   - cp -R mgnl-custom magnolia/light-modules/
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
 
-  - mkdir -p magnolia/apache-tomcat/logs/
-  - touch magnolia/apache-tomcat/logs/catalina.out
+
+  - mkdir -p magnolia/$TOMCAT_FOLDER/logs/
+  - touch magnolia/$TOMCAT_FOLDER/logs/catalina.out
   - pwd && ls
   - cd magnolia
   - mgnl start &
-  - until fgrep -q "Server startup" apache-tomcat/logs/catalina.out; do sleep 1; done
+  - until fgrep -q "Server startup" $TOMCAT_FOLDER/logs/catalina.out; do sleep 1; done
 
   - cd ..
   - cd mgnl-custom
