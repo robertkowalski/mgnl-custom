@@ -19,7 +19,7 @@ before_script:
   - cd .. && git clone -b proto https://github.com/robertkowalski/magnolia-cli && cd magnolia-cli && npm i -g . && cd ..
   - mgnl -h
   # - mkdir -p magnolia && cd magnolia && mgnl jumpstart && cd ..
-  - cd .. && curl -fSL "https://nexus.magnolia-cms.com/content/repositories/magnolia.public.releases/info/magnolia/bundle/magnolia-community-demo-bundle/$MAGNOLIA_CE_VERSION/magnolia-community-demo-bundle-$MAGNOLIA_CE_VERSION-tomcat-bundle.tar.gz -o magnolia.tar.gz"
+  - cd .. && curl -fSL https://nexus.magnolia-cms.com/content/repositories/magnolia.public.releases/info/magnolia/bundle/magnolia-community-demo-bundle/$MAGNOLIA_CE_VERSION/magnolia-community-demo-bundle-$MAGNOLIA_CE_VERSION-tomcat-bundle.tar.gz -o magnolia.tar.gz
   - mkdir magnolia && tar -xzf magnolia.tar.gz -C magnolia --strip-components=1
   - TOMCAT_FOLDER=$(ls magnolia | grep apache)
 
@@ -29,7 +29,6 @@ before_script:
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
 
   - echo "magnolia/$TOMCAT_FOLDER/logs/"
-  - exit 1
   - mkdir -p magnolia/$TOMCAT_FOLDER/logs/
   - touch magnolia/$TOMCAT_FOLDER/logs/catalina.out
   - pwd && ls
