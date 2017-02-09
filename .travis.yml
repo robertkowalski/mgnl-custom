@@ -28,7 +28,8 @@ before_script:
   - cp -R mgnl-custom magnolia/light-modules/
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
 
-
+  - echo "magnolia/$TOMCAT_FOLDER/logs/"
+  - exit 1
   - mkdir -p magnolia/$TOMCAT_FOLDER/logs/
   - touch magnolia/$TOMCAT_FOLDER/logs/catalina.out
   - pwd && ls
