@@ -32,5 +32,3 @@ before_script:
 
   - cd ..
   - cd mgnl-custom
-  - curl http://localhost:8080/magnoliaPublic/ci-testpage.html
-  - curl http://localhost:8080/magnoliaPublic/ci-testpage.html | grep "furbie"

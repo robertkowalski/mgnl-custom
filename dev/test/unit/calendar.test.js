@@ -1,3 +1,5 @@
+// jest based tests
+
 import Calendar from '../../js/calendar.js'
 
 describe('calendar', () => {
