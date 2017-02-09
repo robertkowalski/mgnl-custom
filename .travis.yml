@@ -4,7 +4,6 @@ node_js:
 
 env:
   - MAGNOLIA_CE_VERSION=5.5.1
-  # - MAGNOLIA_CE_VERSION=5.4.10
 
 sudo: false
 addons:
