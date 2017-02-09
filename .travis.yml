@@ -35,7 +35,9 @@ before_script:
   - pwd && ls
   - cd magnolia
   - mgnl start &
-  - until fgrep -q "Server startup" $TOMCAT_FOLDER/logs/catalina.out; do sleep 1; done
+  - cd ..
+
+  - until fgrep -q "Server startup" magnolia/$TOMCAT_FOLDER/logs/catalina.out; do sleep 1; done
 
   - cd ..
   - cd mgnl-custom
