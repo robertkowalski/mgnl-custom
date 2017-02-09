@@ -26,7 +26,7 @@ before_script:
   - ls
 
   - cd mgnl-custom && npm run build && cd ..
-
+  - ls magnolia
   - ls magnolia/light-modules/
   - cp -R mgnl-custom magnolia/light-modules
   - ls magnolia/light-modules/
