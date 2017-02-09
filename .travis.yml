@@ -2,6 +2,10 @@ language: node_js
 node_js:
   - "6"
 
+env:
+  - MAGNOLIA_CE_VERSION=5.5.1
+  - MAGNOLIA_CE_VERSION=5.4.10
+
 sudo: false
 addons:
   apt:
@@ -13,10 +17,13 @@ dist: trusty
 
 before_script:
 
-  - cd .. && git clone -b proto https://github.com/robertkowalski/magnolia-cli && cd magnolia-cli && npm i -g . && cd ..
-  - mgnl -h
+  # - cd .. && git clone -b proto https://github.com/robertkowalski/magnolia-cli && cd magnolia-cli && npm i -g . && cd ..
+  # - mgnl -h
+  # - mkdir -p magnolia && cd magnolia && mgnl jumpstart && cd ..
+  - echo $MAGNOLIA_CE_VERSION
+  - exit 1
+  - cd .. && curl -fSL "https://nexus.magnolia-cms.com/content/repositories/magnolia.public.releases/info/magnolia/bundle/magnolia-community-demo-bundle/$MAGNOLIA_CE_VERSION/magnolia-community-demo-bundle-$MAGNOLIA_CE_VERSION-tomcat-bundle.tar.gz -o magnolia.tar.gz"
 
-  - mkdir -p magnolia && cd magnolia && mgnl jumpstart && cd ..
 
   - cd mgnl-custom && npm run build && cd ..
 
