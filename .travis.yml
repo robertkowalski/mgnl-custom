@@ -23,8 +23,6 @@ before_script:
   - mkdir magnolia && tar -xzf magnolia.tar.gz -C magnolia --strip-components=1
   - TOMCAT_FOLDER=$(ls magnolia | grep apache)
 
-  - echo "magnolia/$TOMCAT_FOLDER/logs/"
-  - exit 1
   - cd mgnl-custom && npm run build && cd ..
 
   - cp -R mgnl-custom magnolia/light-modules/
