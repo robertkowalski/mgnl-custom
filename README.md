@@ -5,10 +5,22 @@
 Small demo module built with webpack.
 
 
-# Fixture Setup?
+## Tests
 
-```
-curl -u superuser:superuser -H "Accept: application/json" "http://localhost:8080/magnoliaAuthor/.rest/nodes/v1/website/ci-testpage?includeMetadata=true&depth=20" > testpage-ci.json
+### Fixture Setup
 
-curl -v -H "Content-Teruser "http://localhost:8080/magnoliaAuthor/.rest/nodes/v1/website/ci-testpage?metaData=true&depth=10" > dev/test/fixtures/ci-testpage.xml
-```
+Fixture was exported from Magnolia using the "Export"-functionality of the UI
+
+### JS Unit Tests
+
+Unit tests are using Jest as test runner, as it supplies a DOM environment
+
+### Template / Integration tests
+
+Tests are super simple and based `cheerio`. Mocha is used as test runner
+
+### Travis
+
+Main test step in Travis executes `npm test`
+
+Setting up the Magnolia server is done with the `before_script` hook.
