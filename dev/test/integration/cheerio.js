@@ -19,7 +19,7 @@ describe('integration test', () => {
       assert.equal($('.furbie').length, 1)
       done()
     })
-  }).timeout(5000)
+  }).timeout(10000)
 
   it('renders the template variable in the script tag', (done) => {
     request({

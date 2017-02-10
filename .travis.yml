@@ -4,6 +4,7 @@ node_js:
 
 env:
   - MAGNOLIA_CE_VERSION=5.5.1
+  - MAGNOLIA_CE_VERSION=5.5
 
 sudo: false
 addons:
@@ -35,4 +36,3 @@ before_script:
 
   - cd ..
   - cd mgnl-custom
-  - ./dev/test/integration/simple.sh
