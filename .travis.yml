@@ -28,11 +28,12 @@ before_script:
   - cd mgnl-custom && npm run build && cd ..
   - mkdir -p magnolia/light-modules
   - cp -R mgnl-custom magnolia/light-modules
-  - ls magnolia/light-modules/
-  - ls magnolia/light-modules/mgnl-custom
-  - ls magnolia/light-modules/mgnl-custom/dev
-  - ls magnolia/light-modules/mgnl-custom/dev/test
-  - ls magnolia/light-modules/mgnl-custom/dev/test/fixtures
+
+
+  - sed -i 's/magnolia.resources.dir=${magnolia.home}/modules/new/g' magnolia/$TOMCAT_FOLDER/webapps/instance/WEB-INF/config/default/magnolia.properties
+
+  - cat magnolia/$TOMCAT_FOLDER/webapps/instance/WEB-INF/config/default/magnolia.properties
+  - exit 1
 
   - cp magnolia/light-modules/mgnl-custom/dev/test/fixtures/website.ci-testpage.xml magnolia/$TOMCAT_FOLDER/webapps/magnoliaAuthor/WEB-INF/bootstrap/common
 
