@@ -35,3 +35,4 @@ before_script:
 
   - cd ..
   - cd mgnl-custom
+  - ./dev/test/integration/simple.sh
