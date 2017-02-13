@@ -41,5 +41,8 @@
     "request": "^2.79.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "lazysizes": "^3.0.0-rc4"
   }
 }
