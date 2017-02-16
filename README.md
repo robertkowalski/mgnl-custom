@@ -5,6 +5,20 @@
 Small demo module built with webpack.
 
 
+## Setup
+
+After installation, add this to your page template:
+
+```
+[#-- mount compiled JS bundle --]
+${resfn.js(["/mgnl-custom/webresources/js/bundle.js"])!}
+
+<script>
+  var c = new Calendar('.furbie')
+  c.render()
+</script>
+```
+
 ## Tests
 
 ### Fixture Setup
