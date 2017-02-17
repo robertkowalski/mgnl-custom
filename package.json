@@ -2,7 +2,7 @@
   "name": "mgnl-custom",
   "version": "0.0.1",
   "description": "no dependencies, no cry",
-  "main": "index.js",
+  "main": "webresources/js/bundle.js",
   "scripts": {
     "test": "npm run unit && npm run integration",
     "unit": "jest",
