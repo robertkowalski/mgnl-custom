@@ -1,6 +1,6 @@
 {
   "name": "mgnl-custom",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "no dependencies, no cry",
   "main": "webresources/js/bundle.js",
   "scripts": {
