@@ -1,4 +1,4 @@
-dev/
+_dev/
 test/
 node_modules/
 
@@ -6,3 +6,4 @@ node_modules/
 .travis.yml
 webpack.config.js
 .babelrc
+npm-debug.log
