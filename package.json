@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run unit && npm run integration",
     "unit": "jest",
-    "integration": "mocha ./dev/test/integration/cheerio.js",
+    "integration": "mocha ./_dev/test/integration/cheerio.js",
     "build": "webpack webpack.config.js",
     "watch": "npm run build -- --watch",
     "prepublish": "echo \"Building...\" && npm run build"
